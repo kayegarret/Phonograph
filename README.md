@@ -5,12 +5,12 @@ Fully functional, realistic, phonograph player. Supports 33's 45's and 78's and 
 
 ![Alt Text](https://media.giphy.com/media/S9XGm4qHSvgJ8jcNVw/giphy.gif)
 
-##Implementation
+## Implementation
 `PhonographController` does the bulk lifting and is how you interface with the overall phonograph player and is implemented as a container view controller which follows the singleton patern. Access to the singleton is as such: `PhonographController.shared`. In order to play, display, and interact with a record it must be enqueued on the `PhonographController`. The source code for the implementation in this project, as a demo, can be found in the `ViewController.swift` file inside of `viewDidLoad`.
 
 > Note: If you fancy creating multiple instances of `PhonographController` you will need to remove the `shared` instance which is defined in the `PhonographController` class and remove the `privacy` access level off the initializer for `PhonographController`. 
 
-##Inteface
+## Inteface
 Listed below are all of the methods that can be used to interact with the `PhonographController` object:
 ```swift
 /// Plays current record at indicated time. If a time is not passed, the record will start playing from the beginning or wherever audio track was paused
@@ -45,7 +45,7 @@ public func setStaticNoiseVolume (_ volume: Float)
 public func setOnlyPlaysStaticNoiseWhenBuffering (_ onlyPlaysStaticNoiseWhenBuffering: Bool)
 ```
 
-#Delegate Methods
+## Delegate Methods
 ```swift
 /// Occurs whenever tonearm is on the actively spinning vinyl track sound grooves but not playing audio. Also called upon release.
     func phonographIsAssumedBuffering (_ phonographController: PhonographController, isAssumedBuffering: Bool)
