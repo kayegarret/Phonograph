@@ -8,7 +8,7 @@ Fully functional, realistic, phonograph player. Supports 33's 45's and 78's and 
 ## Implementation
 `PhonographController` does the bulk lifting and is how you interface with the overall phonograph player and is implemented as a container view controller which follows the singleton patern. Access to the singleton is as such: `PhonographController.shared`. In order to play, display, and interact with a record it must be enqueued on the `PhonographController`. The source code for the implementation in this project, as a demo, can be found in the `ViewController.swift` file inside of `viewDidLoad`.
 
-> Note: If you fancy creating multiple instances of `PhonographController` you will need to remove the `shared` instance which is defined in the `PhonographController` class and remove the `privacy` access level off the initializer for `PhonographController`. 
+> Note: If you fancy creating multiple instances of `PhonographController` you will want to remove the `shared` instance which is defined in the `PhonographController` class and need to remove the `privacy` access level off the initializer for `PhonographController`. 
 
 ## Inteface
 Listed below are all of the methods that can be used to interact with the `PhonographController` object:
