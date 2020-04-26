@@ -1,7 +1,7 @@
 # Phonograph
 iOS Phonograph (Record Player)
 
-Fully functional, realistic, phonograph player. Supports 33's 45's and 78's and can be easily used with custom record designs/images for any audio using minimal and native iOS frameworks.
+Fully functional, realistic, phonograph player. Supports 33's 45's and 78's and can be easily used with custom record designs/images for any audio using minimal and native iOS frameworks. Just download the project!
 
 ![Alt Text](https://media.giphy.com/media/S9XGm4qHSvgJ8jcNVw/giphy.gif)
 
@@ -52,3 +52,5 @@ func phonographIsAssumedBuffering (_ phonographController: PhonographController,
 
 func phonographTonearmStateWillChange (_ phonographController: PhonographController, newTonearmState: PhonographController.TonearmState)
 ```
+---
+Also note that I am not the creator of any of the media content in the assets folder appart from the record images themselves and they should not be used for commercial purposes.
