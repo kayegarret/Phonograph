@@ -48,7 +48,7 @@ public func setOnlyPlaysStaticNoiseWhenBuffering (_ onlyPlaysStaticNoiseWhenBuff
 ## Delegate Methods
 ```swift
 /// Occurs whenever tonearm is on the actively spinning vinyl track sound grooves but not playing audio. Also called upon release.
-    func phonographIsAssumedBuffering (_ phonographController: PhonographController, isAssumedBuffering: Bool)
-    
-    func phonographTonearmStateWillChange (_ phonographController: PhonographController, newTonearmState: PhonographController.TonearmState)
+func phonographIsAssumedBuffering (_ phonographController: PhonographController, isAssumedBuffering: Bool)
+
+func phonographTonearmStateWillChange (_ phonographController: PhonographController, newTonearmState: PhonographController.TonearmState)
 ```
