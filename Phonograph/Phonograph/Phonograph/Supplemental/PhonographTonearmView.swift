@@ -10,8 +10,12 @@ import UIKit
 
 class PhonographTonearmView : UIImageView {
     
-    public var anchorPoint : CGPoint { get { return layer.anchorPoint } set { layer.anchorPoint = newValue }}
-    public var stylusPoint = CGPoint(x: 0, y: 1.0)
+    /// PhonographTonearmView point of rotation. Should be, but not necessarily, always the same as the anchor point of the layer
+    public var anchorPoint = CGPoint(x: 0.76, y: 0.2125)
+    
+    /// PhonographTonearmView point where the needle is located
+    public var stylusPoint = CGPoint(x: 0.1, y: 0.875)
+    
     public var trueZeroFrame = CGRect.zero
     
     
