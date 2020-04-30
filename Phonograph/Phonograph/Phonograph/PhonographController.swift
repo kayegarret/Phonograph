@@ -169,8 +169,8 @@ class PhonographController : ContainerViewController<PhonographView> {
         // Do this by adjusting the size of the tone arm as needed
         
         // Define anchor point and stylus point (will differ depending on the tone arm image)
-        let tonearmAnchorPoint = CGPoint(x: 0.76, y: 0.2125)
-        let tonearmStylusPoint = CGPoint(x: 0.1, y: 0.875)
+        let tonearmAnchorPoint = self.container.tonearm.anchorPoint
+        let tonearmStylusPoint = self.container.tonearm.stylusPoint
                 
         // Gather dimensional data to calculate the size we need to make the tonearm
         let stylusAnchorXDisplacement = abs(tonearmAnchorPoint.x - tonearmStylusPoint.x)
@@ -218,9 +218,10 @@ class PhonographController : ContainerViewController<PhonographView> {
         self.container.tonearm.trueZeroFrame = CGRect(x: self.container.tonearm.frame.origin.x, y: self.container.tonearm.frame.origin.y, width: calculatedTonearmWidth, height: calculatedTonearmHeight)
         self.container.tonearm.stylusPoint = tonearmStylusPoint
         self.container.tonearm.anchorPoint = tonearmAnchorPoint
+        self.container.tonearm.layer.anchorPoint = tonearmAnchorPoint
         self.container.tonearm.layer.transform = CATransform3DMakeTranslation(
-            calculatedTonearmWidth * (self.container.tonearm.anchorPoint.x - 0.5),
-            calculatedTonearmHeight * (self.container.tonearm.anchorPoint.y - 0.5),
+            calculatedTonearmWidth * (tonearmAnchorPoint.x - 0.5),
+            calculatedTonearmHeight * (tonearmAnchorPoint.y - 0.5),
             0
         )
         
