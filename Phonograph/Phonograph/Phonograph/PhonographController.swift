@@ -420,6 +420,11 @@ class PhonographController : ContainerViewController<PhonographView> {
         // Rotate record to match the current angle of the interval
         self.container.record.layer.transform = CATransform3DRotate(self.container.record.layer.transform, anglePerInterval, 0, 0, 1)
         
+        // Also rotate the turntable center peg if this record is a 45 since we will be using the insert
+        if currentRecord.style == .EP {
+            self.container.turntableCenterPeg.layer.transform = CATransform3DRotate(self.container.turntableCenterPeg.layer.transform, anglePerInterval, 0, 0, 1)
+        }
+        
         
         // Define variables to calculate how we should move the stylus
         var shouldUpdateStylusLoc = false
@@ -447,7 +452,9 @@ class PhonographController : ContainerViewController<PhonographView> {
             
             // Make sure audio player is playing and not buffering or something
             guard let audioPlayer = self.audioPlayer,
-                audioPlayer.isPlaying == true else {
+                audioPlayer.isPlaying == true
+                    || audioPlayer.currentTime == audioPlayer.duration
+                    || audioPlayer.currentTime == 0 else {
                     
                     // Alert delegate that we are in a buffer of some sort if we have not already
                     if self.isAssumedBuffering == false {
